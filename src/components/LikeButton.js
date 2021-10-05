@@ -50,7 +50,19 @@ function LikeButton({ user, post: { id, likes, likeCount } }) {
       />
     )
   ) : (
-    <Button icon='heart' color='teal' as={Link} to={'/login'} basic />
+    <Button
+      icon='heart'
+      color='teal'
+      label={{
+        basic: true,
+        color: 'teal',
+        pointing: 'left',
+        content: likeCount
+      }}
+      as={Link}
+      to={'/login'}
+      basic
+    />
   );
 
   return <MyPopup content={liked ? 'Unlike' : 'Like'}>{likeButton}</MyPopup>;
