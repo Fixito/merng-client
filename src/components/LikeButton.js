@@ -13,6 +13,8 @@ function LikeButton({ user, post: { id, likes, likeCount } }) {
       if (likes) {
         if (likes.find((like) => like.username === user.username)) {
           setLiked(true);
+        } else {
+          setLiked(false);
         }
       }
     }
